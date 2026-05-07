@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snow Hotel | Arctic Luxury Retreat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            color: #1e2a3e;
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #0b3b4f 0%, #1a5d6e 100%);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #a8e6cf;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #a8e6cf;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=1200');
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            background-color: #a8e6cf;
+            color: #1e2a3e;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #7bc5ab;
+            transform: scale(1.05);
+        }
+
+        /* Sections */
+        .section {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #0b3b4f;
+        }
+
+        .about-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Rooms Grid */
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .room-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .room-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .room-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .room-card h3 {
+            padding: 1rem;
+            color: #1a5d6e;
+        }
+
+        .room-card p {
+            padding: 0 1rem 1rem;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #0b3b4f;
+            font-size: 1.2rem;
+            padding: 0 1rem 1rem;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-family: inherit;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1a5d6e;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #0b3b4f;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0b3b4f;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+            nav {
+                flex-direction: column;
+            }
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">❄️ SNOW <span>HOTEL</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#rooms">Rooms</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Experience Arctic Luxury</h1>
+            <p>Cozy warmth • Northern Lights • Pure snow</p>
+            <a href="#rooms" class="btn">Explore Rooms →</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2>❄️ About Snow Hotel</h2>
+        <div class="about-text">
+            <p>Nestled in the heart of the arctic circle, Snow Hotel offers a unique blend of winter wonderland and modern comfort. Watch the Northern Lights from your window, enjoy warm Nordic saunas, and experience world-class hospitality in a magical snowy setting.</p>
+            <p style="margin-top: 1rem;">⭐ 4.9/5 - "Best winter getaway" - Travel Weekly</p>
+        </div>
+    </section>
+
+    <section id="rooms" class="section">
+        <h2>🏔️ Our Signature Rooms</h2>
+        <div class="rooms-grid">
+            <div class="room-card">
+                <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=400" alt="Ice Suite">
+                <h3>Ice Suite</h3>
+                <p>Carved entirely from ice & snow. Includes thermal sleeping bags + aurora wake-up call.</p>
+                <p class="price">$299 / night</p>
+            </div>
+            <div class="room-card">
+                <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400" alt="Glass Igloo">
+                <h3>Glass Igloo</h3>
+                <p>Panoramic glass ceiling to view the Northern Lights from your warm bed.</p>
+                <p class="price">$399 / night</p>
+            </div>
+            <div class="room-card">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400" alt="Lodge Suite">
+                <h3>Arctic Lodge</h3>
+                <p>Wooden luxury cabin with fireplace & private sauna.</p>
+                <p class="price">$459 / night</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section">
+        <h2>📸 Gallery</h2>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=400" alt="Snow Hotel exterior">
+            <img src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f?w=400" alt="Northern Lights">
+            <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=400" alt="Hotel lobby">
+            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400" alt="Winter activities">
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>📞 Book Your Stay</h2>
+        <div class="contact-form">
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Check-in Date</label>
+                    <input type="date" id="checkin" required>
+                </div>
+                <div class="form-group">
+                    <label>Message / Special requests</label>
+                    <textarea rows="3" id="message"></textarea>
+                </div>
+                <button type="submit">Send Inquiry ✨</button>
+            </form>
+            <p id="formMessage" style="margin-top: 1rem; text-align: center; color: green;"></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>❄️ Snow Hotel | Arctic Circle, Finland | +358 12 345 6789 | info@snowhotel.com</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">© 2025 Snow Hotel – Where winter dreams come true</p>
+    </footer>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const messageDiv = document.getElementById('formMessage');
+            messageDiv.innerHTML = `Thank you ${name}! A snowflake concierge will reply within 24 hours. ❄️`;
+            messageDiv.style.color = '#1a5d6e';
+            this.reset();
+            setTimeout(() => {
+                messageDiv.innerHTML = '';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

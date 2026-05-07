@@ -1,0 +1,148 @@
+<!-- ================= HOME PAGE ================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shema Milk Shop</title>
+<style>
+body{
+font-family:Arial,sans-serif;
+margin:0;
+background:#f4f4f4;
+}
+header{
+background:#27ae60;
+color:white;
+padding:20px;
+text-align:center;
+}
+nav{
+background:#1e8449;
+padding:15px;
+text-align:center;
+}
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
+}
+section{
+padding:40px;
+text-align:center;
+}
+.hero{
+background:#d5f5e3;
+padding:60px;
+}
+.products{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+.card{
+background:white;
+width:220px;
+padding:20px;
+border-radius:10px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+button{
+background:#27ae60;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+form{
+max-width:400px;
+margin:auto;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+}
+footer{
+background:#1e8449;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:20px;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Shema Milk Shop 🥛</h1>
+<p>Fresh Milk & Dairy Products</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#order">Order</a>
+<a href="#about">About</a>
+</nav>
+
+<section id="home" class="hero">
+<h2>Welcome to Shema Milk Shop</h2>
+<p>We provide fresh milk directly from local farms.</p>
+<button>Shop Now</button>
+</section>
+
+<section id="products">
+<h2>Our Products</h2>
+<div class="products">
+<div class="card">
+<h3>Fresh Milk</h3>
+<p>1000 RWF / Liter</p>
+<button>Buy</button>
+</div>
+
+<div class="card">
+<h3>Yogurt</h3>
+<p>800 RWF</p>
+<button>Buy</button>
+</div>
+
+<div class="card">
+<h3>Cheese</h3>
+<p>1500 RWF</p>
+<button>Buy</button>
+</div>
+</div>
+</section>
+
+<section id="order">
+<h2>Place Your Order</h2>
+<form>
+<input type="text" placeholder="Your Name">
+<input type="text" placeholder="Product Name">
+<input type="number" placeholder="Quantity">
+<input type="text" placeholder="Delivery Location">
+<button type="submit">Place Order</button>
+</form>
+</section>
+
+<section id="about">
+<h2>About Us</h2>
+<p>
+Shema Milk Shop is committed to delivering healthy and affordable dairy products across Rwanda.
+</p>
+</section>
+
+<footer>
+<p>© 2026 Shema Milk Shop | Contact: +250 780 000 000</p>
+</footer>
+
+</body>
+</html>
